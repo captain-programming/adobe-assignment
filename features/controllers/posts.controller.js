@@ -1,8 +1,7 @@
 const PostModal = require("../models/post.model");
 
 const createPost = async(req, res) => {
-  const {content} = req.body;
-  const {user_id} = req.headers;
+  const {content, user_id} = req.body;
 
   try{
     let newPosts = await PostModal.create({user_id, content});

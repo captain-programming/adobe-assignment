@@ -29,7 +29,7 @@ const topActiveUsers = async(req, res)=>{
 
 const totalPosts = async(req, res)=>{
   try{
-    const totalPost = await PostModal.find({});
+    const totalPost = await PostModal.aggregate([{ $lookup: { from: 'users', localField: 'user_id',foreignField: '_id', as: 'users' }}]);
     res.status(200).json(totalPost);
   }catch(err){
     console.log(err);
