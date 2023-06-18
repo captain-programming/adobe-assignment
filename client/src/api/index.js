@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({baseURL: "http://localhost:8080/"});
+const API = axios.create({baseURL: "https://lazy-cyan-donkey-sock.cyclic.app/"});
 
 //posts
 export const fetchPost = () => API.get('/analytics/posts');
